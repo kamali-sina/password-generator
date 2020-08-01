@@ -1,0 +1,1 @@
+A simple tool that handles your password needs. Nothing important will be stored on your pc.
