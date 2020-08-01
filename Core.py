@@ -13,7 +13,7 @@ class Password_Manager():
         print('Please complete the form below:')
         name = input('name: ').strip()
         lastname = input('lastname: ').strip()
-        some_random_info = input('some random info: ').strip()
+        some_random_info = input('a random sentence: ').strip()
         an_important_number = input('an important number to you: ').strip()
         o_file.write(name+'\n')
         o_file.write(lastname+'\n')
