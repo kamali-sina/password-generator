@@ -1,3 +1,8 @@
+"""
+2020 Copyright all rights reserved PapaSinku.
+You are free to use this code for personal use only. In other cases you have to credit the copyright.
+You do not have the rights to modify this code.
+"""
 from hashlib import sha256
 from os import path
 from random import randint
@@ -81,7 +86,15 @@ class Password_Manager():
     def reset_passwords(self):
         self.user_data[-1] = self.get_new_salt()
         self.save_file()
-
+    
+    def get_to_be_hashed(self, user_input):
+        full_stringfied_data = user_input
+        for x in self.user_data:
+            full_stringfied_data += str(x)
+            full_stringfied_data += str(x)[0]
+            full_stringfied_data += str(self.user_data[-1])
+        return full_stringfied_data
+        
     def run(self):
         print('if you feel lost, use "help"')
         while (1):
@@ -97,11 +110,7 @@ class Password_Manager():
                 self.get_help()
             else:
                 print('getting password for ' + user_input)
-                full_stringfied_data = user_input
-                for x in self.user_data:
-                    full_stringfied_data += str(x)
-                    full_stringfied_data += str(x)[0]
-                    full_stringfied_data += str(self.user_data[-1])
+                full_stringfied_data = self.get_to_be_hashed(user_input)
                 final_hash = sha256(full_stringfied_data.encode()).hexdigest()
                 print('this is your password: ', end='')
                 print(final_hash[10:26])
