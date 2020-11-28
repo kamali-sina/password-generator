@@ -5,6 +5,7 @@ __pycache__/
 
 # C extensions
 *.so
+helper.txt
 
 # Distribution / packaging
 .Python
