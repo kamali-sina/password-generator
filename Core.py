@@ -1,7 +1,5 @@
 """
-2020 Copyright all rights reserved PapaSinku.
-You are free to use this code for personal use only. In other cases you have to credit the copyright.
-You do not have the rights to modify this code.
+2020 Copyright all rights reserved Sina Kamali.
 """
 from hashlib import sha256
 from os import path
@@ -59,8 +57,8 @@ class Password_Manager():
             i_file.close()
     
     def get_help(self):
-        print('To get a password of yours enter the name of the media' + 
-              '\ncommands:'
+        print('___~~~| To get a password of yours enter the name of the media |~~~___' + 
+              '\nother commands:'
               '\n    "exit"' + 
               '\n    "reset": To reset your passwords' + 
               '\n    "my_info": to see your info' + 
@@ -98,7 +96,7 @@ class Password_Manager():
     def run(self):
         print('if you feel lost, use "help"')
         while (1):
-            user_input = input('Please Enter Command: ').strip().lower()
+            user_input = input('> ').strip().lower()
             print('')
             if (user_input == 'exit'):
                 self.do_exit()
@@ -117,5 +115,6 @@ class Password_Manager():
                 print('')
 
 
-h = Password_Manager()
-h.run()
+if __name__ == "__main__":
+    h = Password_Manager()
+    h.run()
